@@ -18,7 +18,7 @@ tokio-util.workspace = true
 toml.workspace = true
 tracing-subscriber = { workspace = true, features = ["env-filter", "json"] }
 tracing.workspace = true
-tower.workspace = true
+tower = { workspace = true, features = ["timeout"] }
 tonic = { workspace = true, features = ["zstd"] }
 tonic-health = "0.12.3"
 tonic-reflection = "0.12.3"
@@ -27,13 +27,10 @@ agglayer-config = { path = "../agglayer-config" }
 agglayer-prover-types = { path = "../agglayer-prover-types" }
 agglayer-telemetry = { path = "../agglayer-telemetry" }
 pessimistic-proof = { path = "../pessimistic-proof" }
-agglayer-types = { path = "../agglayer-types" }
+agglayer-types.workspace = true
 
 sp1-sdk = { workspace = true, features = ["native-gnark"] }
 sp1-prover = { workspace = true, features = ["native-gnark"] }
-
-[dev-dependencies]
-agglayer-types = { path = "../agglayer-types" }
 
 [features]
 default = []
